@@ -26,7 +26,7 @@ jobs:
 
       - name: Configure CMake
         # On utilise Ninja car c'est plus rapide en CI
-        run: cmake -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/stm32cubemx/gcc-arm-none-eabi.cmake
+        run: cmake -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake
 
       - name: Build
         run: cmake --build build
