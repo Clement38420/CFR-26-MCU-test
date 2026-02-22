@@ -19,13 +19,13 @@ jobs:
       - name: Install ARM Toolchain
         uses: carlosperate/arm-none-eabi-gcc-action@v1
         with:
-          release: '12.2.Rel1' # Version du compilateur
+          release: '12.2.Rel1' # Compiler version
 
       - name: Install Ninja & CMake
         run: sudo apt-get install -y ninja-build cmake
 
       - name: Configure CMake
-        # On utilise Ninja car c'est plus rapide en CI
+        # Use Ninja because it is faster in CI
         run: cmake -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake
 
       - name: Build
